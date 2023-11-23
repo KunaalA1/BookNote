@@ -138,6 +138,9 @@ venv.bak/
 # mkdocs documentation
 /site
 
+/views/search-book.ejs
+/app.js
+
 # mypy
 .mypy_cache/
 .dmypy.json
