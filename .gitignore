@@ -139,7 +139,10 @@ venv.bak/
 /site
 
 /variables.env
-
+node_modules/
+package-lock.json
+package.json
+public/
 # mypy
 .mypy_cache/
 .dmypy.json
