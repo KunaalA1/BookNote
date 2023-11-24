@@ -1,6 +1,6 @@
 const Book = require('../models/bookObject');
-
-
+const dotenv = require('dotenv');
+dotenv.config();
 
 const book_index = (req, res) => {
     Book.find().sort({ createdAt: -1 })
@@ -84,10 +84,11 @@ const book_update = (req, res) => {
     console.log(err);
   });
 }
-
 const book_search_books = (req, res) => {
-  res.render('search_book');
+  res.render('search_book', {apikeyone: `${process.env.BOOKAPI_ONE}`, apikeytwo: `${process.env.BOOKAPI_TWO}`});
 }
+
+
 
 
 

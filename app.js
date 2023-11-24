@@ -1,9 +1,10 @@
 const bookRoutes = require('./routes/bookRoutes');
-const dbURI = 'mongodb+srv://kaenugul:SparkTower@blogweb.6wicesc.mongodb.net/book_tracking?retryWrites=true&w=majority';
+const dotenv = require('dotenv');
+dotenv.config();
+const dbURI = `${process.env.DBURI}`;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const mongoose = require('mongoose');
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology:true}).then((result) => console.log('connected')).catch((err) => console.log(err));
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
